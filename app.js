@@ -2,6 +2,7 @@
 const {example1, example2, example3, example4} = require('./users');
 const {articleExample1, articleExample2, articleExample3, articleExample4, articleExample5} = require('./articles');
 
+const students = require('./students');
 // db connection and settings
 const connection = require('./config/connection');
 
@@ -11,6 +12,7 @@ async function run() {
   await connection.connect();
   await runUsers();
   await runArticles();
+  await runStudents();
   await connection.close();
 }
 
@@ -31,4 +33,9 @@ async function runArticles() {
   await articleExample3(articlesCollection);
   await articleExample4(articlesCollection);
   await articleExample5(articlesCollection);
+}
+
+async function runStudents() {
+  await connection.get().dropCollection('Students');
+  const studentsCollection = await connection.get().collection('Students').insertMany(students);
 }
