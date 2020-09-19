@@ -1,0 +1,21 @@
+{
+  "test": {
+    "database": "mongodb+srv://Pavlo:654321bonic@clustercapadastr.wlma4.mongodb.net/FinalTask?retryWrites=true&w=majority",
+    "dbName": "FinalTask",
+    "dbConfig": {
+      "useUnifiedTopology": true,
+      "useNewUrlParser": true
+    },
+    "seed": false,
+    "debug": true
+  },
+  "local": {
+    "database": "mongodb+srv://Pavlo:654321bonic@clustercapadastr.wlma4.mongodb.net/FinalTask?retryWrites=true&w=majority",
+    "dbName": "FinalTask",
+    "seed": true,
+    "dbConfig": {
+      "useUnifiedTopology": true,
+      "useNewUrlParser": true
+    }
+  }
+}
