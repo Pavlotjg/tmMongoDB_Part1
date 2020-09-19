@@ -12,7 +12,27 @@ const generateUser = ({
   createdAt
 });
 
+const createArticle = ({
+  name = faker.lorem.word(),
+  description = faker.lorem.word(),
+  type,
+  tags = []
+} = {}) => ({
+  name,
+  description,
+  type,
+  tags
+});
+
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+}
+
 module.exports = {
   mapUser: generateUser,
-  getRandomFirstName: () => faker.name.firstName()
+  getRandomFirstName: () => faker.name.firstName(),
+  createArticle,
+  asyncForEach
 };
